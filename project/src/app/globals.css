@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 300 8% 98%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 339 36% 85%;
+    --primary-foreground: 339 36% 25%;
+    --secondary: 101 31% 65%;
+    --secondary-foreground: 101 31% 20%;
+    --muted: 339 10% 92%;
+    --muted-foreground: 339 10% 40%;
+    --accent: 101 31% 92%;
+    --accent-foreground: 101 31% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 339 20% 90%;
+    --input: 339 20% 90%;
+    --ring: 339 36% 85%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 339 10% 10%;
+    --foreground: 339 10% 95%;
+    --card: 339 10% 12%;
+    --card-foreground: 339 10% 95%;
+    --popover: 339 10% 12%;
+    --popover-foreground: 339 10% 95%;
+    --primary: 339 36% 70%;
+    --primary-foreground: 339 36% 10%;
+    --secondary: 101 31% 60%;
+    --secondary-foreground: 101 31% 10%;
+    --muted: 339 10% 20%;
+    --muted-foreground: 339 10% 70%;
+    --accent: 101 31% 20%;
+    --accent-foreground: 101 31% 80%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 339 10% 20%;
+    --input: 339 10% 20%;
+    --ring: 339 36% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: twinkle 10s infinite;
+}
